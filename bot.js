@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-  
+  client.on('ready', () => {
+  console.log('╚[════════════════════════════════════]╝')
+});
 client.on('ready', () => {
       let ReBeL = ["كل خرا يا دراميكس","يلا سوي ريسيت للحساب","Fuck You Dramex","Dramex = Noob ez","Speed again reset my credits L ez Dramex"]
       setInterval(() => {
