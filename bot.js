@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const bot = new Discord.Client();
-const stripIndents = require('common-tags').stripIndents;
 const fs = require('fs');
 const developers = ["742361727387041813"]
 const adminprefix = "-";
