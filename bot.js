@@ -35,7 +35,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
       }).catch(console.error);
       const embed = new Discord.RichEmbed()
    .setAuthor(`Joined New Server ✅`)
-   .setDescription(`From : __<@${m8tr7}>__\n\nSuggestion: **${a8tra7}**`)
+   .setDescription(`Test test`)
          .setColor("#09fa2a")
          .setFooter('DK BOT' , client.user.avatarURL)
            client.channels.get("751917878089089044").send({embed});
