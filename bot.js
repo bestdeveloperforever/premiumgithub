@@ -33,12 +33,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         READ_MESSAGES: true,
         SEND_MESSAGES: true
       }).catch(console.error);
-      const embed = new Discord.RichEmbed()
-   .setAuthor(`Joined New Server ✅`)
-   .setDescription(`Test test`)
-         .setColor("#09fa2a")
-         .setFooter('DK BOT' , client.user.avatarURL)
-           client.channels.get("751917878089089044").send({embed});
+           client.channels.get("751917878089089044").send(`Test test {oldID}`);
     } else if (oldID === vcID && newID !== vcID) {   // Left the voice channel.
       textChannel.overwritePermissions(newMember, {
         READ_MESSAGES: false,
