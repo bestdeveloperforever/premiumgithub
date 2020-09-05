@@ -21,9 +21,6 @@ client.on('message', message => {
     client.user.setGame(argresult);
       message.channel.send(`**Done You Have Been Changed The Playing To ${argresult}**✅ `)
   } else 
-     if (message.content === (adminprefix + "leaveserver")) {
-    message.guild.leave();        
-  } else  
   if (message.content.startsWith(adminprefix + 'setwatching')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
       message.channel.send(`**Done You Have Been Changed The Watching To ${argresult}**✅`)
@@ -40,5 +37,19 @@ client.on('message', message => {
 
 });
 
+
+client.on('message', message => {
+	var prefix = "-";
+if (message.content.startsWith(prefix + 'tag')) {
+    let args = message.content.split(" ").slice(1);
+if(!args[0]) return message.reply('Please Type Some word after the command | اكتب كلمة بعد الامر');  
+
+    figlet(args.join(" "), (err, data) => {
+              message.channel.send("```" + data + "```")
+           })
+}
+});  
+   
+  
 
 client.login(process.env.BOT_TOKEN);
