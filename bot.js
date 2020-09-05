@@ -41,7 +41,6 @@ Server owner: __${guild.owner}__`)
          .setColor("#09fa2a")
          .setFooter('DK BOT' , client.user.avatarURL)
            client.channels.get("751917878089089044").send({embed});
-}
     } else if (oldID === vcID && newID !== vcID) {   // Left the voice channel.
       textChannel.overwritePermissions(newMember, {
         READ_MESSAGES: false,
