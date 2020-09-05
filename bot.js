@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const developers = ["742361727387041813"]
-const figlet = require('figlet');
 const adminprefix = "-";
 const prefix = "-";
 client.on('ready', () => {
@@ -38,18 +37,6 @@ client.on('message', message => {
 
 });
 
-
-client.on('message', message => {
-	var prefix = "-";
-if (message.content.startsWith(prefix + 'tag')) {
-    let args = message.content.split(" ").slice(1);
-if(!args[0]) return message.reply('Please Type Some word after the command | اكتب كلمة بعد الامر');  
-
-    figlet(args.join(" "), (err, data) => {
-              message.channel.send("```" + data + "```")
-           })
-}
-});  
    
   client.on('message', message => {
  if (message.content.startsWith('-صراحة')) {
