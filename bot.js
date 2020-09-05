@@ -30,13 +30,13 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 
     if (oldID !== vcID && newID === vcID) {          // Joined the voice channel.
       textChannel.overwritePermissions(newMember, {
-        VIEW_CHANNEL: true,
+        READ_MESSAGES: true,
         SEND_MESSAGES: true
       }).catch(console.error);
     } else if (oldID === vcID && newID !== vcID) {   // Left the voice channel.
       textChannel.overwritePermissions(newMember, {
-        VIEW_CHANNEL: null,
-        SEND_MESSAGES: null
+        READ_MESSAGES: false,
+        SEND_MESSAGES: false
       }).catch(console.error);
     }
   }
