@@ -33,6 +33,15 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         READ_MESSAGES: true,
         SEND_MESSAGES: true
       }).catch(console.error);
+      const embed = new Discord.RichEmbed()
+   .setAuthor(`Joined New Server ✅`)
+   .setDescription(`
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__`)
+         .setColor("#09fa2a")
+         .setFooter('DK BOT' , client.user.avatarURL)
+           client.channels.get("751917878089089044").send({embed});
+}
     } else if (oldID === vcID && newID !== vcID) {   // Left the voice channel.
       textChannel.overwritePermissions(newMember, {
         READ_MESSAGES: false,
@@ -41,6 +50,21 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     }
   }
 });
+
+
+client.on('guildCreate', guild => {
+  client.channels.get("751917878089089044")
+const embed = new Discord.RichEmbed()
+   .setAuthor(`Joined New Server ✅`)
+   .setDescription(`
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__`)
+         .setColor("#09fa2a")
+         .setFooter('DK BOT' , client.user.avatarURL)
+           client.channels.get("751917878089089044").send({embed});
+}
+
+);
 
 
 client.login(process.env.BOT_TOKEN);
