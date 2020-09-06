@@ -33,7 +33,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         READ_MESSAGES: true,
         SEND_MESSAGES: true
       }).catch(console.error);
-           client.channels.get("751917878089089044").send(`<@${oldMember.voiceChannel.id}> do **=j** to join the queue!`);
+           client.channels.get("751917878089089044").send("<@" + oldMember.voiceChannel.id + ">");
     } else if (oldID === vcID && newID !== vcID) {   // Left the voice channel.
       textChannel.overwritePermissions(newMember, {
         READ_MESSAGES: false,
