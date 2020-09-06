@@ -39,6 +39,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         READ_MESSAGES: false,
         SEND_MESSAGES: false
       }).catch(console.error);
+          client.channels.get("751917878089089044").send(`=fr ${newMember}`);
     }
   }
 });
