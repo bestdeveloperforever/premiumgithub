@@ -37,8 +37,8 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
       
     } else if (oldID === vcID && newID !== vcID) {   // Left the voice channel.
       textChannel.overwritePermissions(newMember, {
-        READ_MESSAGES: false,
-        SEND_MESSAGES: false
+        READ_MESSAGES: null,
+        SEND_MESSAGES: null
       }).catch(console.error);
           client.channels.get("752216422234456084").send(`=fr ${newMember}`);
     }
